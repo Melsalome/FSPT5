@@ -43,7 +43,7 @@ class Character(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), nullable=False)
     height = db.Column(db.Float)
-    weight = db.Column(db.Integer)
+    eye_color = db.Column(db.String(250))
 
     def __repr__(self):
         return '{}'.format(self.name)
