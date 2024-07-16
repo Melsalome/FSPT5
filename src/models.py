@@ -55,6 +55,26 @@ class Character(db.Model):
             "height": self.height,
             "weight": self.weight
         }
+
+class Vehicle(db.Model):
+    __tablename__ = 'vehicles'
+    id = db.Column(db.Integer, primary_key=True)
+    model = db.Column(db.String(250), nullable=False)
+    length = db.Column(db.Float)
+    crew = db.Column(db.Integer)
+    vehicle_class = db.Column(db.String(250))
+
+    def __repr__(self):
+        return '{}'.format(self.name)
+
+    def serialize(self):
+        return{
+            "id": self.id,
+            "model": self.model,
+            "lenght": self.lenght,
+            "crew": self.crew,
+            "vehicle_class": self.vehicle_class
+        }
     
 class Favorite(db.Model):
     __tablename__ = 'favorites'
